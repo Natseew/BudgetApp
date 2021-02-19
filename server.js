@@ -3,12 +3,15 @@ const bodyParser = require('body-parser')
 const path = require('path');
 const app = express();
 app.use(express.static(path.join(__dirname, 'build')));
-console.log("Server Up")
+
+console.log("Server Is Up")
+
 app.get('/ping', function (req, res) {
  return res.send('pong');
 });
 
 app.get('/', function (req, res) {
+  console.log("App.js requested")
   res.sendFile(path.join(__dirname, 'build', 'App.js'));
 });
 
