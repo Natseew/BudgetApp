@@ -1,31 +1,8 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { Button, StyleSheet,Text, TextInput, View, Image } from 'react-native';
+import Navigator from './routes/homeStack'
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Image></Image>
-      <Text>Username</Text>
-      <TextInput/>
-
-      <Text>Password</Text>
-      <TextInput/>
-
-      <Button
-        title="Sign Up"
-        onPress={()=> console.log("Pressed")}
-      ></Button>
-      <StatusBar style="auto" />
-    </View>
+    <Navigator/>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
