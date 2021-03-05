@@ -14,7 +14,7 @@ app.get('/data',(req,res)=>{
 
 app.post('/data',(req,res)=>{
   var data = fs.readFileSync('server/data.txt','utf8')
-  res.send(data)
+  res.send("Testing")
 })
 
 app.listen(3000,()=> {
