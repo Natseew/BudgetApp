@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { Button, StyleSheet,Text, TextInput, View, Image} from 'react-native';
+import { Container, Header, Left, Body, Right, Title } from 'native-base';
 
 export default function App({navigation}) {
 
@@ -9,21 +10,15 @@ export default function App({navigation}) {
   }
   
   return (
-    <View style={styles.container}>
-      <Image></Image>
-      <Text>Username</Text>
-      <TextInput/>
-
-      <Text>Password</Text>
-      <TextInput/>
-
-      <Button
-        title="Log In"
-        onPress={()=> console.log("Pressed")}
-      ></Button>
-      <Text onPress={pressHandler}>Register Instead</Text>
-      <StatusBar style="auto" />
-    </View>
+      <Container>
+        <Header>
+          <Left/>
+          <Body>
+            <Title>Header</Title>
+          </Body>
+          <Right />
+        </Header>
+      </Container>
   );
 }
 
