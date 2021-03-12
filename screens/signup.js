@@ -2,7 +2,11 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { Button, StyleSheet,Text, TextInput, View, Image } from 'react-native';
 
-export default function App() {
+export default function App({ navigation}) {
+
+  const pressHandler = () => {
+    navigation.navigate('Login')
+  }
   return (
     <View style={styles.container}>
       <Image></Image>
@@ -16,6 +20,7 @@ export default function App() {
         title="Sign Up"
         onPress={()=> console.log("Pressed")}
       ></Button>
+      <Text onPress={pressHandler}>Back to Login</Text>
       <StatusBar style="auto" />
     </View>
   );
