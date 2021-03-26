@@ -4,10 +4,16 @@ import Login from '../screens/login'
 import Signup from '../screens/signup'
 const screens = {
   Login:{
-    screen:Login
+    screen:Login,
+    navigationOptions: {
+      header: null,
+  },
   },
   Signup:{
-    screen:Signup
+    screen:Signup,
+    navigationOptions: {
+      header: null,
+  },
   },
 }
 

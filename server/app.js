@@ -8,12 +8,12 @@ app.get('/',(req,res)=>{
 })
 
 app.get('/data',(req,res)=>{
-  var data = fs.readFileSync('server/data.txt','utf8')
+  var data = fs.readFileSync('server/data.json','utf8')
   res.send(data)
-})
+})  
 
 app.post('/data',(req,res)=>{
-  var data = fs.readFileSync('server/data.txt','utf8')
+  var data = fs.readFileSync('server/data.json','utf8')
   res.send("Testing")
 })
 

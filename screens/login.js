@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Image} from 'react-native';
-import { Container, Content, Button, Text, Form, Item, Input, Label, Grid, Row, Col, Icon, Right } from 'native-base';
+import { Container, Content, Button, Text, Form, Item, Input, Label, Grid, Row, Col, Icon, Right,Header } from 'native-base';
 
 export default function App({navigation}) {
 
@@ -11,6 +11,7 @@ export default function App({navigation}) {
   
   return (
       <Container>
+        <Header/>
         <Content padder>
         <Grid>
         <Row style={{height: 200 }}>
