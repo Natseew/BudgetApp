@@ -10,8 +10,19 @@ export default function App({navigation}) {
     navigation.navigate('Signup')
   };
   const login = () => {
-    let dataToSend = {username: username, password: password};
-    console.log(dataToSend)
+    let dataToSend = JSON.stringify({"username" : username, "password" : password});
+    fetch('http://localhost:3000/user/login', {
+      method: 'POST',
+      body: dataToSend,
+      headers: {
+        //Header Defination
+        'Access-Control-Allow-Origin': '*',
+        'Content-Type':
+        'application/x-www-form-urlencoded;charset=UTF-8',
+        
+      },
+    })
+      .then((response) => console.log(response))
   };
   
 

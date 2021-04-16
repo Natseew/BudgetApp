@@ -12,11 +12,10 @@ export default function App({ navigation}) {
     navigation.navigate('Login')
   }
   const signup = () =>{
-    let formBody = {"email":email, "username":username, "password": password}
-    console.log(formBody)
+    let formBody = JSON.stringify({"email":email, "username":username, "password": password})
     fetch('http://localhost:3000/user/signup', {
       method: 'POST',
-      body: JSON.stringify(formBody),
+      body: formBody,
       headers: {
         //Header Defination
         'Access-Control-Allow-Origin': '*',
