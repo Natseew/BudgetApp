@@ -1,14 +1,20 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import React, { useState} from 'react';
 import { StyleSheet, Image} from 'react-native';
 import { Container, Content, Button, Text, Form, Item, Input, Label, Grid, Row, Col, Icon, Right,Header } from 'native-base';
 
 export default function App({navigation}) {
-
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   const pressHandler = () => {
     navigation.navigate('Signup')
-  }
+  };
+  const login = () => {
+    let dataToSend = {username: username, password: password};
+    console.log(dataToSend)
+  };
   
+
   return (
       <Container>
         <Header/>
@@ -24,18 +30,24 @@ export default function App({navigation}) {
               <Form>
                 <Item floatingLabel>
                     <Label>Username</Label>
-                    <Input/>
+                    <Input 
+                       onChangeText={(username) =>
+                        setUsername(username)
+                      }/>
                   </Item>
                   <Item floatingLabel>
                     <Label>Password</Label>
-                    <Input/>
+                    <Input
+                      onChangeText={(password) =>
+                        setPassword(password)
+                      }/>
                   </Item>
                 </Form>
               </Col>
             </Row>
           <Row style={{height: 100 }}>
             <Col>
-              <Button block>
+              <Button onPress={login} block>
                 <Text>Login</Text>
               </Button>
             </Col>

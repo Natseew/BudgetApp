@@ -1,12 +1,31 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import React, {useState}from 'react';
 import { StyleSheet, Image} from 'react-native';
 import { Container, Content, Button, Text, Form, Item, Input, Label, Grid, Row, Col, Icon, Right } from 'native-base';
 
 export default function App({ navigation}) {
-
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const pressHandler = () => {
     navigation.navigate('Login')
+  }
+  const signup = () =>{
+    let formBody = {"email":email, "username":username, "password": password}
+    console.log(formBody)
+    fetch('http://localhost:3000/user/signup', {
+      method: 'POST',
+      body: JSON.stringify(formBody),
+      headers: {
+        //Header Defination
+        'Access-Control-Allow-Origin': '*',
+        'Content-Type':
+        'application/x-www-form-urlencoded;charset=UTF-8',
+        
+      },
+    })
+      .then((response) => console.log(response))
   }
   return (
     <Container>
@@ -17,31 +36,31 @@ export default function App({ navigation}) {
           <Image></Image>
       </Button>
     </Row>
-      <Row style={{height: 300 }}>
+      <Row>
         <Col>
           <Form>
             <Item floatingLabel>
                 <Label>Email</Label>
-                <Input/>
+                <Input onChangeText={(email) => setEmail(email)}/>
               </Item>
               <Item floatingLabel>
                 <Label>Username</Label>
-                <Input/>
+                <Input onChangeText={(username) => setUsername(username)}/>
               </Item>
               <Item floatingLabel>
                 <Label>Password</Label>
-                <Input/>
+                <Input onChangeText={(password) => setPassword(password)}/>
               </Item>
               <Item floatingLabel>
                 <Label>Confirm Password</Label>
-                <Input/>
+                <Input onChangeText={(confirmPassword) => setConfirmPassword(confirmPassword)}/>
               </Item>
             </Form>
           </Col>
         </Row>
       <Row style={{height: 100 }}>
         <Col>
-          <Button block>
+          <Button onPress={signup} block>
             <Text>Register</Text>
           </Button>
         </Col>
