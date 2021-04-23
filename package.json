@@ -19,7 +19,7 @@
     "express": "^4.17.1",
     "native-base": "^2.15.2",
     "react": "16.13.1",
-    "react-dom": "16.13.1",
+    "react-dom": "16.13.1", 
     "react-native": "^0.64.0",
     "react-native-gesture-handler": "~1.8.0",
     "react-native-keyboard-aware-scroll-view": "^0.9.3",

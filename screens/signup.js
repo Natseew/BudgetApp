@@ -20,7 +20,7 @@ export default function App({ navigation}) {
         //Header Defination
         'Access-Control-Allow-Origin': '*',
         'Content-Type':
-        'application/x-www-form-urlencoded;charset=UTF-8',
+        'application/json;charset=UTF-8',
         
       },
     })
