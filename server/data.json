@@ -1,1 +1,34 @@
-{"users":[{"email":"admin@gmail.com","username":"admin","password":"admin"},{"email":"test","username":"123","password":"123"},{"email":"test","username":"123","password":"123"},{"email":"test","username":"123","password":"123"}]}
+{
+  "users": [
+    {
+      "email": "admin@gmail.com",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "email": "test",
+      "username": "123",
+      "password": "123"
+    },
+    {
+      "email": "test",
+      "username": "123",
+      "password": "123"
+    },
+    {
+      "email": "test",
+      "username": "123",
+      "password": "123"
+    },
+    {
+      "email": "test",
+      "username": "123123",
+      "password": "123"
+    },
+    {
+      "email": "test",
+      "username": "123123",
+      "password": "123"
+    }
+  ]
+}

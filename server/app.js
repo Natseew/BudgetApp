@@ -37,7 +37,7 @@ app.post('/user/signup',(req,res)=>{
       if (err) throw err
       var arrayOfObjects = JSON.parse(data)
       arrayOfObjects.users.push(req.body)
-      fs.writeFile('server/data.json', JSON.stringify(arrayOfObjects), 'utf-8', function(err) {
+      fs.writeFile('server/data.json', JSON.stringify(arrayOfObjects,null,2), 'utf-8', function(err) {
         if (err) throw err
         res.sendStatus(200)
       })
