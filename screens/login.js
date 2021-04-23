@@ -21,8 +21,13 @@ export default function App({navigation}) {
         'application/json;charset=UTF-8',
         
       },
-    })
-      .then((response) => console.log(response))
+    }).then((response) => {
+        if(response.status == 200){
+          navigation.navigate('Home')
+        }else{
+          console.log(response.statusText)
+        }
+      })
   };
   
 
