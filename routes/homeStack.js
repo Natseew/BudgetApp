@@ -1,22 +1,14 @@
 import {createStackNavigator} from 'react-navigation-stack'
-import {createAppContainer} from 'react-navigation'
-import Login from '../screens/login'
-import Signup from '../screens/signup'
+import Home from '../screens/home'
 const screens = {
-  Login:{
-    screen:Login,
-    navigationOptions: {
-      header: null,
-  },
-  },
-  Signup:{
-    screen:Signup,
-    navigationOptions: {
-      header: null,
-  },
-  },
+    Home:{
+      screen:Home,
+      navigationOptions: {
+        header: null,
+      }
+    },
 }
 
 const HomeStack =  createStackNavigator(screens)
 
-export default createAppContainer(HomeStack)
+export default HomeStack
